@@ -1,5 +1,7 @@
 node_modules/
+backened/node_modules/
 .env
+backend/.env
 .env.local
 dist/
 build/

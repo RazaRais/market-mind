@@ -7,6 +7,7 @@ import NewsPanel from "../components/dashboard/NewsPanel";
 import PositionsTable from "../components/dashboard/PositionsTable";
 import OrdersTable from "../components/dashboard/OrdersTable";
 import PortfolioChart from "../components/dashboard/PortfolioChart";
+import PerformanceChart from "../components/dashboard/PerformanceChart";
 
 function Dashboard() {
   return (
@@ -28,6 +29,9 @@ function Dashboard() {
         <div style={{ marginTop: "1rem" }}>
           <PortfolioChart />
         </div>
+        <div style={{ marginTop: "1rem" }}>
+  <PerformanceChart />
+</div>
 
         {/* OTHER CHARTS & WATCHLIST */}
         <ChartPanel />

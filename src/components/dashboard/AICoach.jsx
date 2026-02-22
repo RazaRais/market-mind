@@ -1,34 +1,74 @@
+import { useEffect, useState } from "react";
+import { apiFetch } from "../../services/api";
+
 function AICoach() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    apiFetch("/ai/insights")
+      .then(setData)
+      .catch(console.error);
+  }, []);
+
+  if (!data) return <div className="card">Loading AI insights...</div>;
+
+  const pnlColor = data.totalPnL >= 0 ? "#27ae60" : "#e74c3c";
+  const winColor = data.winRate >= 50 ? "#27ae60" : "#e74c3c";
+
   return (
-    <div className="card">
-      <strong>AI Market Coach</strong>
+    <div className="analytics-card">
+      <h3 style={{ marginBottom: "1rem" }}>AI Performance Analytics</h3>
 
-      <p style={{ fontSize: "0.85rem", color: "#555", marginTop: "0.4rem" }}>
-        Ask questions about your portfolio, risk, and basic market concepts.
-      </p>
+      {/* METRIC GRID */}
+      <div className="analytics-grid">
+        <div className="metric-box">
+          <span>Win Rate</span>
+          <strong style={{ color: winColor }}>
+            {data.winRate}%
+          </strong>
+        </div>
 
-      <div
-        style={{
-          marginTop: "0.6rem",
-          fontSize: "0.85rem",
-          color: "#555",
-        }}
-      >
-        <p>
-          <strong>You:</strong> Why is my risk level marked high?
-        </p>
-        <p>
-          <strong>AI:</strong> More than 60% of your portfolio is invested in a
-          single stock. Diversification can help reduce risk.
-        </p>
+        <div className="metric-box">
+          <span>Total PnL</span>
+          <strong style={{ color: pnlColor }}>
+            ₹ {data.totalPnL}
+          </strong>
+        </div>
+
+        <div className="metric-box">
+          <span>Exposure</span>
+          <strong>{data.exposureRatio}</strong>
+        </div>
+
+        <div className="metric-box">
+          <span>Avg PnL</span>
+          <strong>₹ {data.avgPnL}</strong>
+        </div>
+
+        <div className="metric-box">
+          <span>Largest Gain</span>
+          <strong style={{ color: "#27ae60" }}>
+            ₹ {data.largestGain}
+          </strong>
+        </div>
+
+        <div className="metric-box">
+          <span>Largest Loss</span>
+          <strong style={{ color: "#e74c3c" }}>
+            ₹ {data.largestLoss}
+          </strong>
+        </div>
       </div>
 
-      <input
-        className="input"
-        type="text"
-        placeholder="Ask the AI coach..."
-        style={{ marginTop: "0.6rem", width: "100%" }}
-      />
+      {/* AI SUGGESTIONS */}
+      <div className="ai-suggestions">
+        <h4>AI Suggestions</h4>
+        <ul>
+          {data.advice.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

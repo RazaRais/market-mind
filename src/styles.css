@@ -220,3 +220,60 @@ a {
   border-radius: 999px;
   font-size: 0.75rem;
 }
+
+.analytics-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-top: 1rem;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.metric-box {
+  background: #f8f9fb;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-box span {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.metric-box strong {
+  font-size: 1.2rem;
+  margin-top: 0.4rem;
+}
+
+.ai-suggestions {
+  background: #f4f6f9;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.ai-suggestions ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.ai-suggestions li {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.analytics-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-top: 1rem;
+}

@@ -93,7 +93,7 @@ function Support() {
             <p style={{ fontSize: "0.85rem", color: "#555" }}>
               Email:{" "}
               <a href="mailto:student@example.com" style={{ color: "#387ed1" }}>
-                student@example.com
+                2022ebcs007@online.bits-pilani.ac.in
               </a>
             </p>
             <p style={{ fontSize: "0.8rem", color: "#999", marginTop: "0.8rem" }}>
