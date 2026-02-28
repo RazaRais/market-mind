@@ -43,7 +43,7 @@ exports.buyTrade = async (req, res) => {
   }
 };
 
-// SELL (close trade)
+
 // SELL (close trade)
 exports.sellTrade = async (req, res) => {
   try {
@@ -56,14 +56,14 @@ exports.sellTrade = async (req, res) => {
       status: "OPEN",
     });
 
-    // ✅ ALWAYS CHECK FIRST
+    // ALWAYS CHECK FIRST
     if (!trade) {
       return res.status(404).json({
         message: "No open trade found to sell",
       });
     }
 
-    // ✅ NOW it is safe to access trade fields
+    // NOW it is safe to access trade fields
     await createOrder({
       userId,
       symbol: trade.symbol,

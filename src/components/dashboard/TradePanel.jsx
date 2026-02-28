@@ -10,9 +10,9 @@ function TradePanel({ onTradeComplete }) {
   const [error, setError] = useState("");
   const [priceLoading, setPriceLoading] = useState(false);
 
-  /* =========================
-     LIVE PRICE FETCH (STEP 4)
-     ========================= */
+  /* 
+     LIVE PRICE FETCH 
+     */
   useEffect(() => {
     if (!symbol) return;
 
@@ -32,9 +32,8 @@ function TradePanel({ onTradeComplete }) {
     return () => clearTimeout(timer);
   }, [symbol]);
 
-  /* =========================
-     BUY / SELL HANDLER
-     ========================= */
+  /* 
+     BUY / SELL HANDLER */
   const placeOrder = async (type) => {
     setLoading(true);
     setError("");
