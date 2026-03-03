@@ -22,7 +22,7 @@ function Login() {
       return;
     }
 
-    // ✅ STEP 0 — STORE JWT
+    //  STEP 0 — STORE JWT
     localStorage.setItem("token", data.token);
 
     navigate("/dashboard");

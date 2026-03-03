@@ -9,6 +9,7 @@ import Support from "./pages/Support";
 import SignupSuccess from "./pages/SignupSuccess";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
+import Chatbot from "./pages/Chatbot";
 
 
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/signup/success" element={<SignupSuccess />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/chatbot" element={<Chatbot />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/about" element={<About />} />
         <Route path="/support" element={<Support />} />

@@ -9,9 +9,7 @@ exports.getInsights = async (req, res) => {
     const openTrades = await Trade.find({ userId, status: "OPEN" });
     const closedTrades = await Trade.find({ userId, status: "CLOSED" });
 
-    /* =========================
-       METRICS CALCULATION
-       ========================= */
+   
 
     const totalTrades = closedTrades.length;
 
@@ -41,10 +39,7 @@ exports.getInsights = async (req, res) => {
         ? ((portfolio.totalValue - portfolio.cashBalance) / portfolio.totalValue).toFixed(2)
         : 0;
 
-    /* =========================
-       AI DECISION ENGINE
-       ========================= */
-
+    
     let advice = [];
 
     if (winRate < 40 && totalTrades > 5) {

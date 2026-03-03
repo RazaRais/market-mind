@@ -74,7 +74,7 @@ function Products() {
               <li>Risk warnings based on your trades</li>
               <li>Educational tips & definitions</li>
             </ul>
-            <span style={styles.badge}>AI Powered</span>
+            <a href="/chatbot">Try Financial AI Assistant</a>
           </div>
 
           {/* 5. NEWS & INSIGHTS */}
